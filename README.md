@@ -16,7 +16,7 @@ cmake -S . -B build
 ```
 Add `-GNinja` if you have Ninja.
 
-if you want to add tests, just add `-DBUILD_TESTS`  
+if you want to add tests, just add `-DBUILD_TESTS=on`  
 
 To build:
 ```
@@ -37,3 +37,48 @@ To clang-tidy:
 ```
 cmake --build build --target clangtidy
 ```
+
+## A greate way to use 
+
+Put the code in you bash or zsh (I use zsh):  
+```
+function taskpp() {
+  case "$1" in 
+    "new")
+      git clone https://github.com/Pang-GJ/cpp-project-template.git
+      mv cpp-project-template $2 && cd $2
+      rm -rf .git
+      git init .
+      git add .
+      git commit -m "Init C++ project"
+      git branch -m main
+      cd ..
+      ;;
+    "build")
+      cmake -S . -B build
+      cmake --build build
+      ;;
+    "test")
+      cmake -S . -B build -DBUILD_TESTS=on
+      cmake --build build --target $1
+      ;;
+    "format")
+      cmake --build build --target clangformat
+      ;;
+    "tidy")
+      cmake --build build --target clangtidy
+      ;;
+  esac 
+}
+```
+
+As you see, it's a quite east shell script function.  
+To use it:
+```
+taskpp new <project-name> # create a project
+taskpp build # build && make
+taskpp test  # build for test
+taskpp format # clang-format
+taskpp tidy   # clang-tidy
+```
+(just a little like cargo in rust)
