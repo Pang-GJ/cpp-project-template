@@ -38,7 +38,7 @@ To clang-tidy:
 cmake --build build --target clangtidy
 ```
 
-## A greate way to use 
+## An awesome way to use 
 
 Put the code in you bash or zsh (I use zsh):  
 ```
@@ -72,7 +72,7 @@ function taskpp() {
 }
 ```
 
-As you see, it's a quite east shell script function.  
+As you see, it's quite a simple shell script function.  
 To use it:
 ```
 taskpp new <project-name> # create a project
