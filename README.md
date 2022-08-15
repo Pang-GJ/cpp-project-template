@@ -8,6 +8,7 @@ The requirements are:
 - doctest (test needed)
 - clang-format (optional)
 - clang-tidy (optional)
+- ccache
 
 ## How To Use ?
 To configure:
