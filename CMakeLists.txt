@@ -1,4 +1,14 @@
-cmake_minimum_required(VERSION 3.14...3.23)
+cmake_minimum_required(VERSION 3.20)
+
+# vcpkg
+# vcpkg user note:
+#  ------------------------------------------------------------------------------
+#     To cooperate with CMake, add "-DCMAKE_TOOLCHAIN_FILE=path-to-vcpkg/scripts/buildsystems/vcpkg.cmake"
+#
+#     Please add the intended users to the group 'vcpkg':
+#     # gpasswd -a <user> vcpkg
+# set VCPKG_ROOT to you vcpkg install path
+set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
 
 project(HelloProject
   VERSION
@@ -20,7 +30,7 @@ if(EXISTS "${LOC_PATH}")
 endif()
 
 # For clangd
-set(CMAKE_EXPORT_COMPILE_COMMANDS on)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Options
 option(BUILD_TESTS "Build test executable" OFF)
@@ -53,3 +63,4 @@ add_subdirectory(example)
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 include(FormatAndTidy)
+include(CppLint)
