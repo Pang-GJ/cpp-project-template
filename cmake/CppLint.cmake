@@ -32,5 +32,5 @@ add_custom_target(
   --verbose=2
   --quiet
   --linelength=120
-  --filter=-legal/copyright,-build/header_guard,-runtime/references # https://github.com/cpplint/cpplint/issues/148
+  --filter=-legal/copyright,-build/header_guard,-runtime/references, -build/c++11 # https://github.com/cpplint/cpplint/issues/148
 )
