@@ -63,12 +63,12 @@ cmake-build-*
 # clangd
 .cache/
 
+# xmake
+.xmake
+compile_commands.json
+
 # Built Visual Studio Code Extensions
 *.vsix
-
-# ============
-# custom rules
-draft/
 
 perf.data*
 *.data
@@ -78,6 +78,3 @@ log
 tmp
 *.rdb
 *.svg
-
-# public/index.html for httpd
-public/

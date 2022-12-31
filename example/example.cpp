@@ -1,7 +1,7 @@
 #include "Hello.h"
-#include <cstdio>
 
 int main(int argc, char *argv[]) {
-  printf("hello world");
+  Hello hello;
+  hello.DoSomething();
   return 0;
 }
