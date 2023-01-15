@@ -78,3 +78,6 @@ log
 tmp
 *.rdb
 *.svg
+
+# python cache
+__pycache__/
